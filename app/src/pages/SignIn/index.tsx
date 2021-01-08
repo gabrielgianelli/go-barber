@@ -19,6 +19,7 @@ import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { useAuth } from '../../hooks/auth';
 
 import {
   Container,
@@ -39,6 +40,10 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
+  const { signIn, user } = useAuth();
+
+  console.log(user);
+
   const handleSignIn = useCallback(async (data: SignInFormData) => {
     try {
       formRef.current?.setErrors({});
@@ -54,9 +59,7 @@ const SignIn: React.FC = () => {
         abortEarly: false,
       });
 
-      // await signIn({ email: data.email, password: data.password });
-
-      // history.push('/dashboard');
+      await signIn({ email: data.email, password: data.password });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
