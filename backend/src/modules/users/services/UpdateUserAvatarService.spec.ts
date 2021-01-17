@@ -27,6 +27,7 @@ describe('UpdateUserAvatar', () => {
 });
 
 describe('UpdateUserAvatar', () => {
+  // eslint-disable-next-line require-await
   it('should not be able to update avatar from non existing user', async () => {
     const fakeUserRepository = new FakeUserRepository();
     const fakeStorageProvider = new FakeStorageProvider();
