@@ -31,7 +31,6 @@ describe('AuthenticateUser', () => {
 });
 
 describe('AuthenticateUser', () => {
-  // eslint-disable-next-line require-await
   it('should not be able to authenticate with non existing user', async () => {
     const fakeUserRepository = new FakeUserRepository();
     const fakeHashProvider = new FakeHashProvider();
@@ -44,7 +43,7 @@ describe('AuthenticateUser', () => {
     const email = 'john.doe@email.com';
     const password = '123456';
 
-    expect(
+    await expect(
       authenticateUserService.execute({ email, password }),
     ).rejects.toBeInstanceOf(AppError);
   });
@@ -70,7 +69,7 @@ describe('AuthenticateUser', () => {
 
     await createUserService.execute({ name, email, password: wrongPassword });
 
-    expect(
+    await expect(
       authenticateUserService.execute({ email, password }),
     ).rejects.toBeInstanceOf(AppError);
   });

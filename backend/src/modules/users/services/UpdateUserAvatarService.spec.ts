@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import FakeStorageProvider from '@shared/providers/fakes/FakeStorageProvider';
+import FakeStorageProvider from '@shared/providers/StorageProvider/fakes/FakeStorageProvider';
 import FakeUserRepository from '../repositories/fakes/FakeUserRepository';
 import UpdateUserAvatarService from './UpdateUserAvatarService';
 
@@ -27,7 +27,6 @@ describe('UpdateUserAvatar', () => {
 });
 
 describe('UpdateUserAvatar', () => {
-  // eslint-disable-next-line require-await
   it('should not be able to update avatar from non existing user', async () => {
     const fakeUserRepository = new FakeUserRepository();
     const fakeStorageProvider = new FakeStorageProvider();
@@ -37,7 +36,7 @@ describe('UpdateUserAvatar', () => {
       fakeStorageProvider,
     );
 
-    expect(
+    await expect(
       updateUserAvatar.execute({
         user_id: 'non existing user',
         avatarFileName: 'avatar.jpeg',
