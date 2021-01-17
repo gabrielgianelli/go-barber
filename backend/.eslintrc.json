@@ -39,6 +39,7 @@
       }
     ],
     "no-useless-constructor": "off",
+    "no-useless-return": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
