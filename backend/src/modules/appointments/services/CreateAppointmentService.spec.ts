@@ -2,15 +2,24 @@ import AppError from '@shared/errors/AppError';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import CreateAppointmentService from './CreateAppointmentService';
 
+let fakeAppointmentsRepository: FakeAppointmentsRepository;
+let createAppointmentService: CreateAppointmentService;
+
+let provider_id: string;
+let date: Date;
+
 describe('CreateAppointment', () => {
-  it('should be able to create a new appointment', async () => {
-    const fakeAppointmentsRepository = new FakeAppointmentsRepository();
-    const createAppointmentService = new CreateAppointmentService(
+  beforeEach(() => {
+    fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    createAppointmentService = new CreateAppointmentService(
       fakeAppointmentsRepository,
     );
 
-    const provider_id = '42';
-    const date = new Date(2001, 4, 25);
+    provider_id = '42';
+    date = new Date(2001, 4, 25);
+  });
+
+  it('should be able to create a new appointment', async () => {
     const appointment = await createAppointmentService.execute({
       provider_id,
       date,
@@ -19,19 +28,16 @@ describe('CreateAppointment', () => {
     expect(appointment).toHaveProperty('id');
     expect(appointment).toHaveProperty('date');
     expect(appointment.provider_id).toBe(provider_id);
-    // expect(appointment.date).toBe(date);
   });
-});
 
-describe('CreateAppointment', () => {
   it('should not be able to create two appointments on the same time', async () => {
-    const fakeAppointmentsRepository = new FakeAppointmentsRepository();
-    const createAppointmentService = new CreateAppointmentService(
+    fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    createAppointmentService = new CreateAppointmentService(
       fakeAppointmentsRepository,
     );
 
-    const provider_id = '42';
-    const date = new Date(2001, 4, 25);
+    provider_id = '42';
+    date = new Date(2001, 4, 25);
 
     await createAppointmentService.execute({
       provider_id,
