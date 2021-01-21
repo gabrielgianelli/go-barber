@@ -1,10 +1,11 @@
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
-import IUserRepository from '@modules/users/repositories/IUserRepository';
-import { EntityRepository, getRepository, Repository } from 'typeorm';
+import IFindAllProvidersDTO from '@modules/users/dtos/IFindAllProvidersDTO';
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+import { EntityRepository, getRepository, Not, Repository } from 'typeorm';
 import User from '../entities/User';
 
 @EntityRepository(User)
-class UsersRepository implements IUserRepository {
+class UsersRepository implements IUsersRepository {
   private ormRepository: Repository<User>;
 
   constructor() {

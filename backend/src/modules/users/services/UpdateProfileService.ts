@@ -2,7 +2,7 @@ import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
-import IUserRepository from '../repositories/IUserRepository';
+import IUsersRepository from '../repositories/IUsersRepository';
 
 interface IRequest {
   user_id: string;
@@ -16,7 +16,7 @@ interface IRequest {
 export default class UpdateProfileService {
   constructor(
     @inject('UsersRepository')
-    private userRepository: IUserRepository,
+    private userRepository: IUsersRepository,
     @inject('HashProvider')
     private hashProvider: IHashProvider,
   ) {}

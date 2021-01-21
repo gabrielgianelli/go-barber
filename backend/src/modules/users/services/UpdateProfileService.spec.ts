@@ -1,9 +1,9 @@
 import AppError from '@shared/errors/AppError';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
-import FakeUserRepository from '../repositories/fakes/FakeUserRepository';
+import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import UpdateProfileService from './UpdateProfileService';
 
-let userRepository: FakeUserRepository;
+let userRepository: FakeUsersRepository;
 let hashProvider: FakeHashProvider;
 
 let updateProfile: UpdateProfileService;
@@ -17,7 +17,7 @@ let password2: string;
 
 describe('UpdateProfile', () => {
   beforeEach(() => {
-    userRepository = new FakeUserRepository();
+    userRepository = new FakeUsersRepository();
     hashProvider = new FakeHashProvider();
 
     updateProfile = new UpdateProfileService(userRepository, hashProvider);

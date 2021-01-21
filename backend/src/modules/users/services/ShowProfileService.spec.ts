@@ -1,8 +1,8 @@
 import AppError from '@shared/errors/AppError';
-import FakeUserRepository from '../repositories/fakes/FakeUserRepository';
+import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import ShowProfileService from './ShowProfileService';
 
-let userRepository: FakeUserRepository;
+let userRepository: FakeUsersRepository;
 let showProfile: ShowProfileService;
 
 let name: string;
@@ -11,7 +11,7 @@ let password: string;
 
 describe('ShowProfile', () => {
   beforeEach(() => {
-    userRepository = new FakeUserRepository();
+    userRepository = new FakeUsersRepository();
     showProfile = new ShowProfileService(userRepository);
 
     name = 'John Doe';

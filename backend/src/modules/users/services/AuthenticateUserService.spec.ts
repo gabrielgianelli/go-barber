@@ -1,10 +1,10 @@
 import AppError from '@shared/errors/AppError';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
-import FakeUserRepository from '../repositories/fakes/FakeUserRepository';
+import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import AuthenticateUserService from './AuthenticateUserService';
 import CreateUserService from './CreateUserService';
 
-let fakeUserRepository: FakeUserRepository;
+let fakeUsersRepository: FakeUsersRepository;
 let fakeHashProvider: FakeHashProvider;
 let createUserService: CreateUserService;
 let authenticateUserService: AuthenticateUserService;
@@ -15,14 +15,14 @@ let wrongPassword: string;
 
 describe('AuthenticateUser', () => {
   beforeEach(() => {
-    fakeUserRepository = new FakeUserRepository();
+    fakeUsersRepository = new FakeUsersRepository();
     fakeHashProvider = new FakeHashProvider();
     createUserService = new CreateUserService(
-      fakeUserRepository,
+      fakeUsersRepository,
       fakeHashProvider,
     );
     authenticateUserService = new AuthenticateUserService(
-      fakeUserRepository,
+      fakeUsersRepository,
       fakeHashProvider,
     );
 
