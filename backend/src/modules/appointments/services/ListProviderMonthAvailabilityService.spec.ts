@@ -1,3 +1,4 @@
+import { getYear } from 'date-fns';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import ListProviderMonthAvailabilityService from './ListProviderMonthAvailabilityService';
 
@@ -5,6 +6,7 @@ let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let listProviderMonthAvailability: ListProviderMonthAvailabilityService;
 
 let provider_id: string;
+let user_id: string;
 let year: number;
 let month: number;
 let day: number;
@@ -16,8 +18,9 @@ describe('ListProviderMonthAvaiability', () => {
       fakeAppointmentsRepository,
     );
 
-    provider_id = 'user';
-    year = 2021;
+    provider_id = 'provider';
+    user_id = 'user';
+    year = getYear(new Date()) + 1;
     month = 4;
     day = 25;
   });
@@ -25,56 +28,67 @@ describe('ListProviderMonthAvaiability', () => {
   it('should be able to list the month availability from provider', async () => {
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 8, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 9, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 10, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 11, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 12, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 13, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 14, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 15, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 16, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day, 17, 0, 0),
     });
 
     await fakeAppointmentsRepository.create({
       provider_id,
+      user_id,
       date: new Date(year, month, day + 1, 10, 0, 0),
     });
 
