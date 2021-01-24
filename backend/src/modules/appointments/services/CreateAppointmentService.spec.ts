@@ -1,9 +1,11 @@
+import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
 import AppError from '@shared/errors/AppError';
 import { getYear } from 'date-fns';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import CreateAppointmentService from './CreateAppointmentService';
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
+let fakeNotificationsRepository: FakeNotificationsRepository;
 let createAppointmentService: CreateAppointmentService;
 
 let provider_id: string;
@@ -18,8 +20,11 @@ let lastHour: number;
 describe('CreateAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    fakeNotificationsRepository = new FakeNotificationsRepository();
+
     createAppointmentService = new CreateAppointmentService(
       fakeAppointmentsRepository,
+      fakeNotificationsRepository,
     );
 
     provider_id = 'provider';
@@ -45,11 +50,6 @@ describe('CreateAppointment', () => {
   });
 
   it('should not be able to create two appointments on the same time', async () => {
-    fakeAppointmentsRepository = new FakeAppointmentsRepository();
-    createAppointmentService = new CreateAppointmentService(
-      fakeAppointmentsRepository,
-    );
-
     await createAppointmentService.execute({
       provider_id,
       user_id,
