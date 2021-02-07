@@ -59,29 +59,4 @@ describe('ListProviders', () => {
 
     expect(providers).toEqual([user1, user2]);
   });
-
-  it('should be able to list the providers using cache', async () => {
-    const user1 = await usersRepository.create({
-      name: name1,
-      email: email1,
-      password: password1,
-    });
-
-    const user2 = await usersRepository.create({
-      name: name2,
-      email: email2,
-      password: password2,
-    });
-
-    const loggedUser = await usersRepository.create({
-      name: nameUser,
-      email: emailUser,
-      password: passwordUser,
-    });
-
-    let providers = await listProviders.execute({ user_id: loggedUser.id });
-    providers = await listProviders.execute({ user_id: loggedUser.id });
-
-    expect(providers).toEqual([user1, user2]);
-  });
 });
