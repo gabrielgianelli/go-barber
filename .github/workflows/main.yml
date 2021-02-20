@@ -18,7 +18,7 @@ jobs:
           
       # Instalar as dependências NPM/Yarn
       - name: Install dependencies
-        run: yarn build
+        run: yarn
         
       # Executar a build
       - name: Run build
