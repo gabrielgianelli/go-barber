@@ -39,7 +39,7 @@ jobs:
         working-directory: ./backend
         run: yarn build
         
-      # Copiar pasta dist pra dentro da Digital Ocean
+      # Copiar código para a Digital Ocean
       - name: Copy dist to Digital Ocean
         uses: appleboy/scp-action@master
         with:
@@ -47,5 +47,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "backend"
+          source: "backend,!node_modules"
           target: "~/app/go-barber"
