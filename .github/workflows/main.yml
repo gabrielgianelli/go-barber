@@ -18,10 +18,12 @@ jobs:
           
       # Instalar as dependências NPM/Yarn
       - name: Install dependencies
+        working-directory: ./backend
         run: yarn
         
       # Executar a build
       - name: Run build
+        working-directory: ./backend
         run: yarn build
         
       # Copiar pasta dist pra dentro da Digital Ocean
