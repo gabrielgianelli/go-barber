@@ -1,0 +1,7 @@
+[build]
+  base = "web/"
+  publish = "build/"
+  command = "yarn build"
+
+[context.production]
+  environment = { REACT_APP_API_URL = "api.gobarber.gabrielgianelli.dev" }
