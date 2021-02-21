@@ -59,5 +59,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ~/app/gobarber/backend
-            yarn
 
