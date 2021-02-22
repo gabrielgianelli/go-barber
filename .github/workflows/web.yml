@@ -20,12 +20,14 @@ jobs:
         node-version: 12.x
         
     - name: Install dependencies
+      working-directory: ./web
       run: yarn install
     
     # - name: Run tests
     #   run: yarn test --watchAll false
     
     - name: Build
+      working-directory: ./web
       run: yarn build
     
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
