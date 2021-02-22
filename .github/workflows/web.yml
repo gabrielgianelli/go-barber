@@ -3,7 +3,6 @@ name: CI - Web
 on:
   push:
     branches: [master]
-    paths: "web/**"
 
 env:
   BUCKET: go-barber.gabrielgianelli.dev
