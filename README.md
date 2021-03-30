@@ -18,10 +18,10 @@ Acesse em: <a href="https://gobarber.gabrielgianelli.dev">https://gobarber.gabri
 
 Baixe em: <a href="https://play.google.com/store/apps/details?id=com.gabrielgianelli.appgobarber">https://play.google.com/store/apps/details?id=com.gabrielgianelli.appgobarber</a>
 
-<img src="https://play-lh.googleusercontent.com/E0wqM-V4IzbaERTGqVcIt2MoLYK6PPllt_JHxFRdTikomMB-nD-8iFCUsZQXTVR5l3NP=w720-h310-rw" alt="GoBarber Web"/>
-<img src="https://play-lh.googleusercontent.com/Dddm2DijhiNIekznjycRjoNYEvzG1kh_2h-y0Rh7-r-xpq2F9Cf4iCNVXOVht3S6JMc=w720-h310-rw" alt="GoBarber Web"/>
-<img src="https://play-lh.googleusercontent.com/zre910MyRu5ZIncBfOvf7CHeCfmdiw2smo24glNVpeAi_fTLeXmA5889ZXyr-f8ekQ=w720-h310-rw" alt="GoBarber Web"/>
-<img src="https://play-lh.googleusercontent.com/lbRyQvkF8i664A5k3WwZCeuKCQDlic0BFewM4-GUBfbdgRbZfETqZolONKyI-hDrNF6o=w720-h310-rw" alt="GoBarber Web"/>
+<img src="https://play-lh.googleusercontent.com/E0wqM-V4IzbaERTGqVcIt2MoLYK6PPllt_JHxFRdTikomMB-nD-8iFCUsZQXTVR5l3NP=w720-h310-rw" alt="GoBarber Web" style="display:inline" />
+<img src="https://play-lh.googleusercontent.com/Dddm2DijhiNIekznjycRjoNYEvzG1kh_2h-y0Rh7-r-xpq2F9Cf4iCNVXOVht3S6JMc=w720-h310-rw" alt="GoBarber Web" style="display:inline" />
+<img src="https://play-lh.googleusercontent.com/zre910MyRu5ZIncBfOvf7CHeCfmdiw2smo24glNVpeAi_fTLeXmA5889ZXyr-f8ekQ=w720-h310-rw" alt="GoBarber Web" style="display:inline" />
+<img src="https://play-lh.googleusercontent.com/lbRyQvkF8i664A5k3WwZCeuKCQDlic0BFewM4-GUBfbdgRbZfETqZolONKyI-hDrNF6o=w720-h310-rw" alt="GoBarber Web" style="display:inline" />
 
 ## API
 
