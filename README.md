@@ -25,7 +25,9 @@ Baixe em: <a href="https://play.google.com/store/apps/details?id=com.gabrielgian
 
 ## API
 
-Acesse em: <a href="https://api.gobarber.gabrielgianelli.dev">https://api.gobarber.gabrielgianelli.dev</a>
+Acesse em: 
+
+<a href="https://insomnia.rest/run/?label=GoBarber%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgabrielgianelli%2Fgo-barber%2Fmaster%2Fbackend%2FInsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia" /></a>
 
 ## Tecnologias Utilizadas
 
